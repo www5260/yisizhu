@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>SSO</title>
+    <script type="text/javascript" th:src="@{/js/jquery.js}"></script>
+    <script type="text/javascript">
+        if (top.location != location){
+            top.location.href = location.href;
+        }
+    </script>
+
+</head>
+<body>
+<h1 id="a" style="text-align: center;">欢迎您！</h1>
+<form id="userLoginForm" action="" style="text-align: center;">
+    <input type="text" name="userName"/><br />
+    <input type="password" name="password"/>
+    <input type="hidden" name="gotoURL" th:value="${session.gotoURL}" />
+    <br />
+    <input id="loginBtn" type="button" value="登录1"/><br />
+</form>
+</body>
+
+<script type="text/javascript" th:src="@{/js/user.js}"></script>
+</html>
